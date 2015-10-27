@@ -21,6 +21,12 @@ public class PlayerControler : MonoBehaviour {
     string _currentDirection = "right";
     int _currentAnimationState = STATE_IDILE;
 
+
+    float _timeHeld = 0f;
+    float _heightJump = 5f;
+    bool _addedMaxJump = false;
+
+
     // Use this for initialization
     void Start () {
         animator = this.GetComponent<Animator>();
@@ -29,13 +35,28 @@ public class PlayerControler : MonoBehaviour {
 
 	void FixedUpdate () {
 
-        //track if the button combo is pressed (space+down) 
-        //used to falling through the platform
-        if(Input.GetAxis("Vertical") == -1) {
-            gameObject.layer = 9;
+        //Jump functionality for the player
+        //if we hold the space key more time, the player go highter
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (_isGrounded) {
+                _isGrounded = false;
+                _heightJump = 5f;
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, _heightJump);
+            }
         }
-        else {
-            gameObject.layer = 0;
+        if (Input.GetKey(KeyCode.Space)) {
+            changeState(STATE_JUMP);
+            _timeHeld += Time.deltaTime;
+
+            if (_timeHeld > 0.2f && _addedMaxJump != true) {
+                _addedMaxJump = true;
+                 _heightJump = 4.5f;
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, _heightJump);
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.Space)) {
+            _timeHeld = 0;
+            _addedMaxJump = false;
         }
 
 
@@ -48,13 +69,6 @@ public class PlayerControler : MonoBehaviour {
                 if (_isGrounded) {
                     changeState(STATE_WALK);
                 }
-                if (Input.GetKeyDown(KeyCode.Space)) {
-                    if (_isGrounded) {
-                        _isGrounded = false;
-                        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
-                        changeState(STATE_JUMP);
-                    }
-                }
             }
             else if (Input.GetKey(KeyCode.RightArrow)) {
                 changeDirection("right");
@@ -66,20 +80,6 @@ public class PlayerControler : MonoBehaviour {
 
                 if (_isGrounded) {
                     changeState(STATE_WALK);
-                }
-                if (Input.GetKeyDown(KeyCode.Space)) {
-                    if (_isGrounded) {
-                        _isGrounded = false;
-                        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
-                        changeState(STATE_JUMP);
-                    }
-                }
-            }
-            else if (Input.GetKeyDown(KeyCode.Space)) {
-                if (_isGrounded) {
-                    _isGrounded = false;
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
-                    changeState(STATE_JUMP);
                 }
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow)) {
@@ -94,6 +94,10 @@ public class PlayerControler : MonoBehaviour {
         }
 
 
+    }
+
+    void jump() {
+      
     }
 
     void changeState(int state){
