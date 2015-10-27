@@ -57,4 +57,8 @@ public class Monster : MonoBehaviour {
 
     }
 
+    public float getDirection() {
+        return dir;
+    }
+
 }

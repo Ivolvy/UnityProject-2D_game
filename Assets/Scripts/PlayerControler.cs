@@ -6,7 +6,7 @@ public class PlayerControler : MonoBehaviour {
     public float walkSpeed = 3;
 
     bool _isGrounded = true;
-
+    bool _pauseMovement = false;
 
 
     Animator animator;
@@ -15,6 +15,7 @@ public class PlayerControler : MonoBehaviour {
     const int STATE_WALK = 1;
     const int STATE_JUMP = 2;
     const int STATE_DUCK = 3;
+    const int STATE_HURT = 4;
 
 
     string _currentDirection = "right";
@@ -29,58 +30,59 @@ public class PlayerControler : MonoBehaviour {
 	void FixedUpdate () {
 
 
-       
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            changeDirection("left");
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-3, GetComponent<Rigidbody2D>().velocity.y);
+        if (_pauseMovement != true) {
 
-            if (_isGrounded) {
-                changeState(STATE_WALK);
+            if (Input.GetKey(KeyCode.LeftArrow)) {
+                changeDirection("left");
+                GetComponent<Rigidbody2D>().velocity = new Vector2(-3, GetComponent<Rigidbody2D>().velocity.y);
+
+                if (_isGrounded) {
+                    changeState(STATE_WALK);
+                }
+                if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                    if (_isGrounded) {
+                        _isGrounded = false;
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
+                        changeState(STATE_JUMP);
+                    }
+                }
             }
-            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            else if (Input.GetKey(KeyCode.RightArrow)) {
+                changeDirection("right");
+                //transform.Translate(Vector3.right * walkSpeed * Time.fixedDeltaTime);
+
+
+                GetComponent<Rigidbody2D>().velocity = new Vector2(3, GetComponent<Rigidbody2D>().velocity.y);
+
+
+                if (_isGrounded) {
+                    changeState(STATE_WALK);
+                }
+                if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                    if (_isGrounded) {
+                        _isGrounded = false;
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
+                        changeState(STATE_JUMP);
+                    }
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow)) {
                 if (_isGrounded) {
                     _isGrounded = false;
                     GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
                     changeState(STATE_JUMP);
                 }
             }
-        }
-        else if (Input.GetKey(KeyCode.RightArrow)) {
-            changeDirection("right");
-            //transform.Translate(Vector3.right * walkSpeed * Time.fixedDeltaTime);
-
-
-            GetComponent<Rigidbody2D>().velocity = new Vector2(3, GetComponent<Rigidbody2D>().velocity.y);
-
-
-            if (_isGrounded) {
-                changeState(STATE_WALK);
-            }
-            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            else if (Input.GetKeyDown(KeyCode.DownArrow)) {
                 if (_isGrounded) {
-                    _isGrounded = false;
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
-                    changeState(STATE_JUMP);
+                    changeState(STATE_DUCK);
                 }
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            if (_isGrounded) {
-                _isGrounded = false;
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
-                changeState(STATE_JUMP);
+            else if (_isGrounded) {
+                changeState(STATE_IDILE);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x / 1.05f, GetComponent<Rigidbody2D>().velocity.y);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-            if (_isGrounded) {
-                changeState(STATE_DUCK);
-            }
-        }
-        else if(_isGrounded) {
-            changeState(STATE_IDILE);
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x / 1.05f , GetComponent<Rigidbody2D>().velocity.y);
-        }
-
 
 
     }
@@ -101,6 +103,25 @@ public class PlayerControler : MonoBehaviour {
             _isGrounded = true;
             changeState(STATE_IDILE);
         }
+        else if(coll.gameObject.name == "Monster") {
+
+            //get the monster object
+            GameObject Go = GameObject.Find("Monster");
+            Monster monster = (Monster)Go.GetComponent(typeof(Monster));
+            float monsterDirection = monster.getDirection();
+
+            changeState(STATE_HURT);
+            //push the player on the opposate direction of the monster
+            GetComponent<Rigidbody2D>().velocity = new Vector2(2 * -monsterDirection, 2.5f);
+            _pauseMovement = true;
+            Invoke("enableMovement", 2);
+        }
+    }
+
+    //enable the movement of the Player
+    void enableMovement() {
+        _pauseMovement = false;
+        changeState(STATE_IDILE);
     }
 
     void changeDirection(string direction) {
