@@ -10,8 +10,8 @@ public class Camera : MonoBehaviour {
     private Vector3 offset;
     Vector3 targetPos;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         targetPos = transform.position;
     }
 	
@@ -19,10 +19,11 @@ public class Camera : MonoBehaviour {
 	void FixedUpdate () {
         //Debug.Log(target.transform.position.x);
 
-        if (target && target.transform.position.x >= -4 && target.transform.position.x <= 20) {
+        if (target && target.transform.position.x >= -5.6 && target.transform.position.x <= 20.6 ) {
             Vector3 posNoZ = transform.position;
             posNoZ.z = target.transform.position.z;
-            posNoZ.y = target.transform.position.y;
+
+
 
             Vector3 targetDirection = (target.transform.position - posNoZ);
 
@@ -30,8 +31,16 @@ public class Camera : MonoBehaviour {
 
             targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime);
 
-            transform.position = Vector3.Lerp(transform.position, targetPos + offset, 0.25f);
+            if (target.transform.position.y > -2.9f) {
+                targetPos.y = target.transform.position.y;
+            }
+            //if the y position of player doesn't rises, fixe the camera
+            else {
+                targetPos.y = -2.9f;
+            }
 
+            transform.position = Vector3.Lerp(transform.position, targetPos + offset, 0.25f);
+            
         }
 	}
 }
