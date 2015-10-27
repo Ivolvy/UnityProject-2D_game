@@ -19,7 +19,7 @@ public class Camera : MonoBehaviour {
 	void FixedUpdate () {
         //Debug.Log(target.transform.position.x);
 
-        if (target && target.transform.position.x >= -5.6 && target.transform.position.x <= 20.6 ) {
+        if (target && target.transform.position.x >= -5.4 && target.transform.position.x <= 20.6 ) {
             Vector3 posNoZ = transform.position;
             posNoZ.z = target.transform.position.z;
 

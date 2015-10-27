@@ -29,6 +29,15 @@ public class PlayerControler : MonoBehaviour {
 
 	void FixedUpdate () {
 
+        //track if the button combo is pressed (space+down) 
+        //used to falling through the platform
+        if(Input.GetAxis("Vertical") == -1) {
+            gameObject.layer = 9;
+        }
+        else {
+            gameObject.layer = 0;
+        }
+
 
         if (_pauseMovement != true) {
 
@@ -39,7 +48,7 @@ public class PlayerControler : MonoBehaviour {
                 if (_isGrounded) {
                     changeState(STATE_WALK);
                 }
-                if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                if (Input.GetKeyDown(KeyCode.Space)) {
                     if (_isGrounded) {
                         _isGrounded = false;
                         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
@@ -58,7 +67,7 @@ public class PlayerControler : MonoBehaviour {
                 if (_isGrounded) {
                     changeState(STATE_WALK);
                 }
-                if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                if (Input.GetKeyDown(KeyCode.Space)) {
                     if (_isGrounded) {
                         _isGrounded = false;
                         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
@@ -66,7 +75,7 @@ public class PlayerControler : MonoBehaviour {
                     }
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            else if (Input.GetKeyDown(KeyCode.Space)) {
                 if (_isGrounded) {
                     _isGrounded = false;
                     GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
@@ -99,7 +108,7 @@ public class PlayerControler : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll){
         
-        if(coll.gameObject.name == "Background") {
+        if(coll.gameObject.name == "Background" || coll.gameObject.name == "Platform") {
             _isGrounded = true;
             changeState(STATE_IDILE);
         }
