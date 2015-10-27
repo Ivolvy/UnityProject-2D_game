@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ACharacter : MonoBehaviour {
+abstract public class ACharacter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
