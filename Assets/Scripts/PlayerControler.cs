@@ -32,24 +32,42 @@ public class PlayerControler : MonoBehaviour {
        
         if (Input.GetKey(KeyCode.LeftArrow)) {
             changeDirection("left");
-            transform.Translate(Vector3.right * walkSpeed * Time.fixedDeltaTime);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-3, GetComponent<Rigidbody2D>().velocity.y);
 
             if (_isGrounded) {
                 changeState(STATE_WALK);
             }
+            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                if (_isGrounded) {
+                    _isGrounded = false;
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
+                    changeState(STATE_JUMP);
+                }
+            }
         }
         else if (Input.GetKey(KeyCode.RightArrow)) {
             changeDirection("right");
-            transform.Translate(Vector3.right * walkSpeed * Time.fixedDeltaTime);
+            //transform.Translate(Vector3.right * walkSpeed * Time.fixedDeltaTime);
+
+
+            GetComponent<Rigidbody2D>().velocity = new Vector2(3, GetComponent<Rigidbody2D>().velocity.y);
+
 
             if (_isGrounded) {
                 changeState(STATE_WALK);
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                if (_isGrounded) {
+                    _isGrounded = false;
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
+                    changeState(STATE_JUMP);
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow)) {
             if (_isGrounded) {
                 _isGrounded = false;
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 350));
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6);
                 changeState(STATE_JUMP);
             }
         }
@@ -60,6 +78,7 @@ public class PlayerControler : MonoBehaviour {
         }
         else if(_isGrounded) {
             changeState(STATE_IDILE);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x / 1.05f , GetComponent<Rigidbody2D>().velocity.y);
         }
 
 
