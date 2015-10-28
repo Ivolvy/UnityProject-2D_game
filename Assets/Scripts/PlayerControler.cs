@@ -11,29 +11,33 @@ public class PlayerControler : MonoBehaviour {
 
     Animator animator;
 
-    const int STATE_IDILE = 0;
-    const int STATE_WALK = 1;
-    const int STATE_JUMP = 2;
-    const int STATE_DUCK = 3;
-    const int STATE_HURT = 4;
-
+    string _previousState = "";
 
     string _currentDirection = "right";
-    int _currentAnimationState = STATE_IDILE;
+    string _currentAnimationState = "IDILE";
 
 
     float _timeHeld = 0f;
     float _heightJump = 5f;
     bool _addedMaxJump = false;
 
+    Rigidbody2D _playerComponent;
 
     // Use this for initialization
     void Start () {
         animator = this.GetComponent<Animator>();
+        _playerComponent = GetComponent<Rigidbody2D>();
     }
-	
 
-	void FixedUpdate () {
+
+    void Update() {
+
+
+
+    }
+
+
+    void FixedUpdate () {
 
         //Jump functionality for the player
         //if we hold the space key more time, the player go highter
@@ -41,18 +45,20 @@ public class PlayerControler : MonoBehaviour {
             if (_isGrounded) {
                 _isGrounded = false;
                 _heightJump = 5f;
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, _heightJump);
+
+                _playerComponent.AddForce(new Vector2(0, 250));
             }
         }
         if (Input.GetKey(KeyCode.Space)) {
-            changeState(STATE_JUMP);
+            changeState("JUMP");
             _timeHeld += Time.deltaTime;
-
+          
             if (_timeHeld > 0.2f && _addedMaxJump != true) {
                 _addedMaxJump = true;
-                 _heightJump = 4.5f;
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, _heightJump);
+                _heightJump = 5f;
+                _playerComponent.velocity = new Vector2(_playerComponent.velocity.x, _heightJump);
             }
+
         }
         if (Input.GetKeyUp(KeyCode.Space)) {
             _timeHeld = 0;
@@ -64,57 +70,53 @@ public class PlayerControler : MonoBehaviour {
 
             if (Input.GetKey(KeyCode.LeftArrow)) {
                 changeDirection("left");
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-3, GetComponent<Rigidbody2D>().velocity.y);
+                _playerComponent.velocity = new Vector2(-3, _playerComponent.velocity.y);
 
                 if (_isGrounded) {
-                    changeState(STATE_WALK);
+                    changeState("WALK");
                 }
             }
             else if (Input.GetKey(KeyCode.RightArrow)) {
                 changeDirection("right");
-                //transform.Translate(Vector3.right * walkSpeed * Time.fixedDeltaTime);
 
-
-                GetComponent<Rigidbody2D>().velocity = new Vector2(3, GetComponent<Rigidbody2D>().velocity.y);
-
+                _playerComponent.velocity = new Vector2(3, _playerComponent.velocity.y);
 
                 if (_isGrounded) {
-                    changeState(STATE_WALK);
+                    changeState("WALK");
                 }
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow)) {
                 if (_isGrounded) {
-                    changeState(STATE_DUCK);
+                    changeState("DUCK");
                 }
             }
             else if (_isGrounded) {
-                changeState(STATE_IDILE);
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x / 1.05f, GetComponent<Rigidbody2D>().velocity.y);
+                changeState("IDILE");
+                _playerComponent.velocity = new Vector2(_playerComponent.velocity.x / 1.05f, _playerComponent.velocity.y);
             }
         }
-
-
     }
 
-    void jump() {
-      
-    }
 
-    void changeState(int state){
+    void changeState(string state){
         if(_currentAnimationState == state){
             return;
         }
+        if (_previousState != "") {
+            animator.SetBool(_previousState, false);
+        }
 
-        animator.SetInteger("state", state);
-
+        animator.SetBool(state, true);
         _currentAnimationState = state;
+
+        _previousState = state;
     }
 
     void OnCollisionEnter2D(Collision2D coll){
         
         if(coll.gameObject.name == "Background" || coll.gameObject.name == "Platform") {
             _isGrounded = true;
-            changeState(STATE_IDILE);
+            changeState("IDILE");
         }
         else if(coll.gameObject.name == "Monster") {
 
@@ -123,18 +125,20 @@ public class PlayerControler : MonoBehaviour {
             Monster monster = (Monster)Go.GetComponent(typeof(Monster));
             float monsterDirection = monster.getDirection();
 
-            changeState(STATE_HURT);
+            changeState("HURT");
+
             //push the player on the opposate direction of the monster
-            GetComponent<Rigidbody2D>().velocity = new Vector2(2 * -monsterDirection, 2.5f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(2 * monsterDirection, 2.5f);
             _pauseMovement = true;
             Invoke("enableMovement", 2);
         }
     }
 
+
     //enable the movement of the Player
     void enableMovement() {
         _pauseMovement = false;
-        changeState(STATE_IDILE);
+        changeState("IDILE");
     }
 
     void changeDirection(string direction) {
@@ -149,8 +153,5 @@ public class PlayerControler : MonoBehaviour {
 
             _currentDirection = direction;
         }
-      
     }
-
-
 }
