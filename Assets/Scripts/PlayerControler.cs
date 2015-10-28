@@ -21,6 +21,13 @@ public class PlayerControler : MonoBehaviour {
     float _heightJump = 5f;
     bool _addedMaxJump = false;
 
+    bool _idile;
+    bool _walk;
+    bool _jump;
+    bool _duck;
+    bool _hurt;
+
+
     Rigidbody2D _playerComponent;
 
     // Use this for initialization
@@ -50,7 +57,7 @@ public class PlayerControler : MonoBehaviour {
             }
         }
         if (Input.GetKey(KeyCode.Space)) {
-            changeState("JUMP");
+            Jump = true;
             _timeHeld += Time.deltaTime;
           
             if (_timeHeld > 0.2f && _addedMaxJump != true) {
@@ -73,7 +80,7 @@ public class PlayerControler : MonoBehaviour {
                 _playerComponent.velocity = new Vector2(-3, _playerComponent.velocity.y);
 
                 if (_isGrounded) {
-                    changeState("WALK");
+                    Walk = true;
                 }
             }
             else if (Input.GetKey(KeyCode.RightArrow)) {
@@ -82,16 +89,16 @@ public class PlayerControler : MonoBehaviour {
                 _playerComponent.velocity = new Vector2(3, _playerComponent.velocity.y);
 
                 if (_isGrounded) {
-                    changeState("WALK");
+                    Walk = true;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+            else if (Input.GetKey(KeyCode.DownArrow)) {
                 if (_isGrounded) {
-                    changeState("DUCK");
+                    Duck = true;
                 }
             }
             else if (_isGrounded) {
-                changeState("IDILE");
+                Idile = true;
                 _playerComponent.velocity = new Vector2(_playerComponent.velocity.x / 1.05f, _playerComponent.velocity.y);
             }
         }
@@ -116,7 +123,7 @@ public class PlayerControler : MonoBehaviour {
         
         if(coll.gameObject.name == "Background" || coll.gameObject.name == "Platform") {
             _isGrounded = true;
-            changeState("IDILE");
+            Idile = true;
         }
         else if(coll.gameObject.name == "Monster") {
 
@@ -125,7 +132,7 @@ public class PlayerControler : MonoBehaviour {
             Monster monster = (Monster)Go.GetComponent(typeof(Monster));
             float monsterDirection = monster.getDirection();
 
-            changeState("HURT");
+            Hurt = true;
 
             //push the player on the opposate direction of the monster
             GetComponent<Rigidbody2D>().velocity = new Vector2(2 * monsterDirection, 2.5f);
@@ -138,7 +145,7 @@ public class PlayerControler : MonoBehaviour {
     //enable the movement of the Player
     void enableMovement() {
         _pauseMovement = false;
-        changeState("IDILE");
+        Idile = true;
     }
 
     void changeDirection(string direction) {
@@ -154,4 +161,59 @@ public class PlayerControler : MonoBehaviour {
             _currentDirection = direction;
         }
     }
+
+
+
+    public bool Idile {
+        get {
+            return _idile;
+        }
+        set {
+            _idile = true;
+            changeState("IDILE");
+        }
+    }
+
+    public bool Walk {
+        get {
+            return _walk;
+        }
+        set {
+            _walk = true;
+            changeState("WALK");
+        }
+    }
+
+    public bool Jump {
+        get {
+            return _jump;
+        }
+        set {
+            _jump = true;
+            changeState("JUMP");
+        }
+    }
+
+    public bool Duck {
+        get {
+            return _duck;
+        }
+        set {
+            _duck = true;
+            changeState("DUCK");
+        }
+    }
+
+    public bool Hurt {
+        get {
+            return _hurt;
+        }
+        set {
+            _hurt = true;
+            changeState("HURT");
+        }
+    }
+
+
+
 }
