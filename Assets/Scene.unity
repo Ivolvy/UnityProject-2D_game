@@ -2308,6 +2308,7 @@ GameObject:
   - 4: {fileID: 1153658628}
   - 212: {fileID: 1153658627}
   - 114: {fileID: 1153658626}
+  - 61: {fileID: 1153658629}
   m_Layer: 0
   m_Name: jewel
   m_TagString: Untagged
@@ -2364,6 +2365,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!61 &1153658629
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1153658625}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .310000002, y: .439999998}
 --- !u!1 &1195451001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3244,6 +3258,7 @@ GameObject:
   - 4: {fileID: 1874466907}
   - 212: {fileID: 1874466906}
   - 114: {fileID: 1874466908}
+  - 61: {fileID: 1874466909}
   m_Layer: 0
   m_Name: jewel
   m_TagString: Untagged
@@ -3300,6 +3315,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15070e9851c6bed48bd94c5f5b3da064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1874466909
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1874466905}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .310000002, y: .439999998}
 --- !u!1 &1974570529
 GameObject:
   m_ObjectHideFlags: 0
