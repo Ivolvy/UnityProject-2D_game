@@ -14,10 +14,15 @@ public class Monster : ACharacter {
     bool _isDead = false;
     Rigidbody2D _monsterComponent;
 
+    public AudioClip kill;
+    AudioSource audioSource;
+
+
     // Use this for initialization
     void Start () {
         animator = this.GetComponent<Animator>();
         _monsterComponent = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         changeState("WALK", animator);
         changeMonsterDirection("left");
     }
@@ -46,12 +51,13 @@ public class Monster : ACharacter {
 
     void OnTriggerEnter2D(Collider2D other) {
         changeState("DIE", animator);
+        audioSource.PlayOneShot(kill);
+
         _isDead = true;
         GameObject Go = GameObject.Find("Monster");
 
         Destroy(Go, 0.5f);
     }
-
 
     public void changeMonsterDirection(string direction) {
         _currentDirection = base.changeDirection(direction);
@@ -63,7 +69,6 @@ public class Monster : ACharacter {
             dir = -1;
         }
     }
-
 
     public float getDirection() {
         return dir;

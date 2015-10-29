@@ -11,8 +11,6 @@ public class PlayerControler : ACharacter {
 
     Animator animator;
 
-    string _currentDirection = "right";
-
 
     float _timeHeld = 0f;
     float _heightJump = 5f;
@@ -24,20 +22,43 @@ public class PlayerControler : ACharacter {
     bool _duck;
     bool _hurt;
 
+    bool _soundJumpPlaying = false;
 
     Rigidbody2D _playerComponent;
+
+
+    public AudioClip jump;
+    public AudioClip hurt;
+    public AudioClip walk;
+    AudioSource audioSource;
 
     // Use this for initialization
     void Start () {
         animator = this.GetComponent<Animator>();
         _playerComponent = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
     void Update() {
 
-
-
+        if((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && _isGrounded) {
+            Debug.Log("ssss");
+            
+            if(_soundJumpPlaying == false) {
+                _soundJumpPlaying = true;
+                audioSource.loop = true;
+                audioSource.clip = walk;
+                audioSource.Play();
+            }
+        }
+        else if ((Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow)) || !_isGrounded) {
+            if (_soundJumpPlaying == true) {
+                _soundJumpPlaying = false;
+                audioSource.Stop();
+            }
+        }
+      
     }
 
 
@@ -51,6 +72,7 @@ public class PlayerControler : ACharacter {
                 _heightJump = 5f;
 
                 _playerComponent.AddForce(new Vector2(0, 250));
+                audioSource.PlayOneShot(jump);
             }
         }
         if (Input.GetKey(KeyCode.Space)) {
@@ -116,6 +138,7 @@ public class PlayerControler : ACharacter {
             float monsterDirection = monster.getDirection();
 
             Hurt = true;
+            audioSource.PlayOneShot(hurt);
 
             //push the player on the opposate direction of the monster
             GetComponent<Rigidbody2D>().velocity = new Vector2(2 * monsterDirection, 2.5f);
