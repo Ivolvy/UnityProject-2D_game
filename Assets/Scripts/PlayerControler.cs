@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerControler : MonoBehaviour {
+public class PlayerControler : ACharacter {
 
     public float walkSpeed = 3;
 
@@ -11,10 +11,7 @@ public class PlayerControler : MonoBehaviour {
 
     Animator animator;
 
-    string _previousState = "";
-
     string _currentDirection = "right";
-    string _currentAnimationState = "IDILE";
 
 
     float _timeHeld = 0f;
@@ -105,20 +102,6 @@ public class PlayerControler : MonoBehaviour {
     }
 
 
-    void changeState(string state){
-        if(_currentAnimationState == state){
-            return;
-        }
-        if (_previousState != "") {
-            animator.SetBool(_previousState, false);
-        }
-
-        animator.SetBool(state, true);
-        _currentAnimationState = state;
-
-        _previousState = state;
-    }
-
     void OnCollisionEnter2D(Collision2D coll){
         
         if(coll.gameObject.name == "Background" || coll.gameObject.name == "Platform") {
@@ -148,21 +131,8 @@ public class PlayerControler : MonoBehaviour {
         Idile = true;
     }
 
-    void changeDirection(string direction) {
 
-        if(_currentDirection != direction) {
-            if (direction == "right") {
-                transform.Rotate(0, 180, 0);
-            }
-            else if(direction == "left"){
-                transform.Rotate(0, -180, 0);
-            }
-
-            _currentDirection = direction;
-        }
-    }
-
-
+    //GETTERS AND SETTERS
 
     public bool Idile {
         get {
@@ -170,7 +140,7 @@ public class PlayerControler : MonoBehaviour {
         }
         set {
             _idile = true;
-            changeState("IDILE");
+            changeState("IDILE", animator);
         }
     }
 
@@ -180,7 +150,7 @@ public class PlayerControler : MonoBehaviour {
         }
         set {
             _walk = true;
-            changeState("WALK");
+            changeState("WALK", animator);
         }
     }
 
@@ -190,7 +160,7 @@ public class PlayerControler : MonoBehaviour {
         }
         set {
             _jump = true;
-            changeState("JUMP");
+            changeState("JUMP", animator);
         }
     }
 
@@ -200,7 +170,7 @@ public class PlayerControler : MonoBehaviour {
         }
         set {
             _duck = true;
-            changeState("DUCK");
+            changeState("DUCK", animator);
         }
     }
 
@@ -210,10 +180,8 @@ public class PlayerControler : MonoBehaviour {
         }
         set {
             _hurt = true;
-            changeState("HURT");
+            changeState("HURT", animator);
         }
     }
-
-
-
+    
 }

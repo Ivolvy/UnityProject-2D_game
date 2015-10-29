@@ -1,18 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Monster : MonoBehaviour {
+public class Monster : ACharacter {
 
     public float walkSpeed = 3;
     bool _isGrounded = true;
 
     Animator animator;
-
-    const int STATE_IDILE = 0;
-    const int STATE_DIE = 1;
-
-
-    int _currentAnimationState = STATE_IDILE;
 
     string _currentDirection = "right";
     public float dir = 1;
@@ -24,7 +18,8 @@ public class Monster : MonoBehaviour {
     void Start () {
         animator = this.GetComponent<Animator>();
         _monsterComponent = GetComponent<Rigidbody2D>();
-        changeDirection("left");
+        changeState("WALK", animator);
+        changeMonsterDirection("left");
     }
 	
 	// Update is called once per frame
@@ -41,16 +36,16 @@ public class Monster : MonoBehaviour {
         }
         else if(coll.gameObject.name == "Player" || coll.gameObject.tag == "Wall") {
             if (_currentDirection == "left") {
-                changeDirection("right");
+                changeMonsterDirection("right");
             }
             else {
-                changeDirection("left");
+                changeMonsterDirection("left");
             }
         }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        changeState(STATE_DIE);
+        changeState("DIE", animator);
         _isDead = true;
         GameObject Go = GameObject.Find("Monster");
 
@@ -58,31 +53,17 @@ public class Monster : MonoBehaviour {
     }
 
 
-    void changeDirection(string direction) {
+    public void changeMonsterDirection(string direction) {
+        _currentDirection = base.changeDirection(direction);
 
-        if (_currentDirection != direction) {
-            if (direction == "right") {
-                transform.Rotate(0, 180, 0);
-                dir = 1;
-            }
-            else if (direction == "left") {
-                transform.Rotate(0, -180, 0);
-                dir = -1;
-            }
-            _currentDirection = direction;
+        if (_currentDirection == "right") {
+            dir = 1;
         }
-
+        else if (_currentDirection == "left") {
+            dir = -1;
+        }
     }
 
-    void changeState(int state) {
-        if (_currentAnimationState == state) {
-            return;
-        }
-
-        animator.SetInteger("state_monster", state);
-
-        _currentAnimationState = state;
-    }
 
     public float getDirection() {
         return dir;
