@@ -10,6 +10,9 @@ public class JewelCounter : MonoBehaviour {
     public AudioClip collect;
     AudioSource audioSource;
 
+    public GameObject party;
+    public GameObject discoBall;
+
     // Use this for initialization
     void Start () {
         audioSource = GetComponent<AudioSource>();
@@ -24,6 +27,12 @@ public class JewelCounter : MonoBehaviour {
         nbOfJewels += 1;
         audioSource.PlayOneShot(collect);
         GameObject.Find("nbOfJewels").GetComponent<Text>().text = nbOfJewels.ToString() + "x";
+
+
+        if(nbOfJewels == 1) {
+            party.SetActive(true);
+            discoBall.SetActive(true);
+        }
     }
 
 }

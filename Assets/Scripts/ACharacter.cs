@@ -37,10 +37,12 @@ abstract public class ACharacter : MonoBehaviour {
 
         if (_currentDirection != direction) {
             if (direction == "right") {
-                transform.Rotate(0, 180, 0);
+               // transform.Rotate(0, 180, 0);
+                transform.localScale = new Vector3(1, 1, 1);
             }
             else if (direction == "left") {
-                transform.Rotate(0, -180, 0);
+               // transform.Rotate(0, -180, 0);
+                transform.localScale = new Vector3(-1, 1, 1);
             }
 
             return _currentDirection = direction;

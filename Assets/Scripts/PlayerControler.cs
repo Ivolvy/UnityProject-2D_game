@@ -43,7 +43,6 @@ public class PlayerControler : ACharacter {
     void Update() {
 
         if((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && _isGrounded) {
-            Debug.Log("ssss");
             
             if(_soundJumpPlaying == false) {
                 _soundJumpPlaying = true;
@@ -58,7 +57,6 @@ public class PlayerControler : ACharacter {
                 audioSource.Stop();
             }
         }
-      
     }
 
 

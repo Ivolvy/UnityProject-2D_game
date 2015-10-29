@@ -1,0 +1,1244 @@
+fileFormatVersion: 2
+guid: 8f4a81d47bd8d934793f6d961bfcb90f
+timeCreated: 1446123068
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: gangnam_0
+    21300002: gangnam_1
+    21300004: gangnam_2
+    21300006: gangnam_3
+    21300008: gangnam_4
+    21300010: gangnam_5
+    21300012: gangnam_6
+    21300014: gangnam_7
+    21300016: gangnam_8
+    21300018: gangnam_9
+    21300020: gangnam_10
+    21300022: gangnam_11
+    21300024: gangnam_12
+    21300026: gangnam_13
+    21300028: gangnam_14
+    21300030: gangnam_15
+    21300032: gangnam_16
+    21300034: gangnam_17
+    21300036: gangnam_18
+    21300038: gangnam_19
+    21300040: gangnam_20
+    21300042: gangnam_21
+    21300044: gangnam_22
+    21300046: gangnam_23
+    21300048: gangnam_24
+    21300050: gangnam_25
+    21300052: gangnam_26
+    21300054: gangnam_27
+    21300056: gangnam_28
+    21300058: gangnam_29
+    21300060: gangnam_30
+    21300062: gangnam_31
+    21300064: gangnam_32
+    21300066: gangnam_33
+    21300068: gangnam_34
+    21300070: gangnam_35
+    21300072: gangnam_36
+    21300074: gangnam_37
+    21300076: gangnam_38
+    21300078: gangnam_39
+    21300080: gangnam_40
+    21300082: gangnam_41
+    21300084: gangnam_42
+    21300086: gangnam_43
+    21300088: gangnam_44
+    21300090: gangnam_45
+    21300092: gangnam_46
+    21300094: gangnam_47
+    21300096: gangnam_48
+    21300098: gangnam_49
+    21300100: gangnam_50
+    21300102: gangnam_51
+    21300104: gangnam_52
+    21300106: gangnam_53
+    21300108: gangnam_54
+    21300110: gangnam_55
+    21300112: gangnam_56
+    21300114: gangnam_57
+    21300116: gangnam_58
+    21300118: gangnam_59
+    21300120: gangnam_60
+    21300122: gangnam_61
+    21300124: gangnam_62
+    21300126: gangnam_63
+    21300128: gangnam_64
+    21300130: gangnam_65
+    21300132: gangnam_66
+    21300134: gangnam_67
+    21300136: gangnam_68
+    21300138: gangnam_69
+    21300140: gangnam_70
+    21300142: gangnam_71
+    21300144: gangnam_72
+    21300146: gangnam_73
+    21300148: gangnam_74
+    21300150: gangnam_75
+    21300152: gangnam_76
+    21300154: gangnam_77
+    21300156: gangnam_78
+    21300158: gangnam_79
+    21300160: gangnam_80
+    21300162: gangnam_81
+    21300164: gangnam_82
+    21300166: gangnam_83
+    21300168: gangnam_84
+    21300170: gangnam_85
+    21300172: gangnam_86
+    21300174: gangnam_87
+    21300176: gangnam_88
+    21300178: gangnam_89
+    21300180: gangnam_90
+    21300182: gangnam_91
+    21300184: gangnam_92
+    21300186: gangnam_93
+    21300188: gangnam_94
+    21300190: gangnam_95
+    21300192: gangnam_96
+    21300194: gangnam_97
+    21300196: gangnam_98
+    21300198: gangnam_99
+    21300200: gangnam_100
+    21300202: gangnam_101
+    21300204: gangnam_102
+    21300206: gangnam_103
+    21300208: gangnam_104
+    21300210: gangnam_105
+    21300212: gangnam_106
+    21300214: gangnam_107
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: gangnam_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 92
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 94
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 94
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_3
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 92
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_4
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 93
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 94
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_6
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 93
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_7
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 93
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_8
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 94
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_9
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 93
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_10
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 92
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_11
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 94
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_12
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 94
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_13
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 92
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_14
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 93
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_15
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 94
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_16
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 93
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_17
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 92
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_18
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 94
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_19
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 94
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_20
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 92
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_21
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 92
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_22
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 94
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_23
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 92
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_24
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 92
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_25
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 94
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_26
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 93
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_27
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 62
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_28
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 64
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_29
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 64
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_30
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 62
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_31
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 63
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_32
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 64
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_33
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 63
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_34
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 63
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_35
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 64
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_36
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 63
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_37
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 62
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_38
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 64
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_39
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 64
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_40
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 62
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_41
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 63
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_42
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 64
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_43
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 63
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_44
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 62
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_45
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 64
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_46
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_47
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 62
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_48
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 62
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_49
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 64
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_50
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 62
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_51
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 62
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_52
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 64
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_53
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 63
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_54
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 30
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_55
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 32
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_56
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 32
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_57
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 30
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_58
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 31
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_59
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 32
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_60
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 31
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_61
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 31
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_62
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 32
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_63
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 31
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_64
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 30
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_65
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 32
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_66
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 32
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_67
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 30
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_68
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 31
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_69
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 32
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_70
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 31
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_71
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 30
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_72
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 32
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_73
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 32
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_74
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 30
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_75
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 30
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_76
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 32
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_77
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 30
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_78
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 30
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_79
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 32
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_80
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 31
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_81
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_82
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 2
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_83
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 2
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_84
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_85
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 2
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_86
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 2
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_87
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_88
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_89
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 2
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_90
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 2
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_91
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 0
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_92
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 2
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_93
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 2
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_94
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 0
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_95
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 1
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_96
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 2
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_97
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 2
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_98
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 0
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_99
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 2
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_100
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 2
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_101
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 0
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_102
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 0
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_103
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 2
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_104
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 0
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_105
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 0
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_106
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 2
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gangnam_107
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
