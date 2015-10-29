@@ -46,10 +46,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ACharacter.cs" />
-     <Compile Include="Assets\Scripts\Camera.cs" />
      <Compile Include="Assets\Scripts\JewelCollider.cs" />
      <Compile Include="Assets\Scripts\JewelCounter.cs" />
      <Compile Include="Assets\Scripts\Monster.cs" />
+     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
+     <Compile Include="Assets\Scripts\ParallaxCamera.cs" />
+     <Compile Include="Assets\Scripts\ParallaxLayer.cs" />
+     <Compile Include="Assets\Scripts\PlayerCamera.cs" />
      <Compile Include="Assets\Scripts\PlayerControler.cs" />
      <None Include="Assets\codeandweb.com\Readme.txt" />
  <Reference Include="UnityEngine.UI">
