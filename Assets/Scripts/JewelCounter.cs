@@ -14,7 +14,13 @@ public class JewelCounter : MonoBehaviour {
     public GameObject discoBall;
 
     public Material lighting_Sprite;
-    public GameObject GoPlayer;
+
+    GameObject GoPlayer;
+    GameObject GoCrate;
+    GameObject GoBlade;
+    GameObject MainCamera;
+
+    public AudioClip partyMusic;
 
 
     // Use this for initialization
@@ -22,6 +28,9 @@ public class JewelCounter : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         lighting_Sprite = Resources.Load("Lighting_Sprite", typeof(Material)) as Material;
         GoPlayer = GameObject.Find("Player");
+        GoCrate = GameObject.Find("crate");
+        GoBlade = GameObject.Find("blade");
+        MainCamera = GameObject.Find("MainCamera");
     }
 	
 	// Update is called once per frame
@@ -36,10 +45,26 @@ public class JewelCounter : MonoBehaviour {
  
         //we enter party mode!
         if(nbOfJewels == 1) {
-            GoPlayer.GetComponent<Renderer>().material = lighting_Sprite;
+
+            modifyGameSong();
+            modifyLightingOnSprites();
+
             party.SetActive(true);
             discoBall.SetActive(true);
         }
+    }
+
+
+    void modifyGameSong() {
+        MainCamera.GetComponent<AudioSource>().clip = partyMusic;
+        MainCamera.GetComponent<AudioSource>().Play();
+    }
+
+    //modifiy material in order to illuminate the objects
+    void modifyLightingOnSprites() {
+        GoPlayer.GetComponent<Renderer>().material = lighting_Sprite;
+        GoCrate.GetComponent<Renderer>().material = lighting_Sprite;
+        GoBlade.GetComponent<Renderer>().material = lighting_Sprite;
     }
 
 }
