@@ -13,9 +13,15 @@ public class JewelCounter : MonoBehaviour {
     public GameObject party;
     public GameObject discoBall;
 
+    public Material lighting_Sprite;
+    public GameObject GoPlayer;
+
+
     // Use this for initialization
     void Start () {
         audioSource = GetComponent<AudioSource>();
+        lighting_Sprite = Resources.Load("Lighting_Sprite", typeof(Material)) as Material;
+        GoPlayer = GameObject.Find("Player");
     }
 	
 	// Update is called once per frame
@@ -27,9 +33,9 @@ public class JewelCounter : MonoBehaviour {
         nbOfJewels += 1;
         audioSource.PlayOneShot(collect);
         GameObject.Find("nbOfJewels").GetComponent<Text>().text = nbOfJewels.ToString() + "x";
-
-
+ 
         if(nbOfJewels == 1) {
+            GoPlayer.GetComponent<Renderer>().material = lighting_Sprite;
             party.SetActive(true);
             discoBall.SetActive(true);
         }

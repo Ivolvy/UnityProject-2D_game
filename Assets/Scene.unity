@@ -406,7 +406,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: e431aa842effbdd4a8509a5afbbcb7ae, type: 2}
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3669,6 +3669,8 @@ MonoBehaviour:
   collect: {fileID: 8300000, guid: 831496a42a0ffdf458ac77ec13d75afd, type: 3}
   party: {fileID: 427912025}
   discoBall: {fileID: 2103464901}
+  lighting_Sprite: {fileID: 2100000, guid: e431aa842effbdd4a8509a5afbbcb7ae, type: 2}
+  GoPlayer: {fileID: 0}
 --- !u!82 &1513625540
 AudioSource:
   m_ObjectHideFlags: 0
