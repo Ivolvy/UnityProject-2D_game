@@ -81,17 +81,19 @@ public class PlayerControler : ACharacter {
             }
         }
         if (Input.GetKey(KeyCode.Space)) {
-            _timeHeld += Time.deltaTime;
-          
-            if (_timeHeld > 0.2f && _addedMaxJump != true) {
-                _addedMaxJump = true;
-                _heightJump = 5f;
-                _playerComponent.velocity = new Vector2(_playerComponent.velocity.x, _heightJump);
-            }
+            if (Jump) {
+                _timeHeld += Time.deltaTime;
 
+                if (_timeHeld > 0.2f && _addedMaxJump != true) {
+                    _addedMaxJump = true;
+                    _heightJump = 5f;
+                    _playerComponent.velocity = new Vector2(_playerComponent.velocity.x, _heightJump);
+                }
+            }
         }
         if (Input.GetKeyUp(KeyCode.Space)) {
             _timeHeld = 0;
+            Jump = false;
             _addedMaxJump = false;
         }
 
