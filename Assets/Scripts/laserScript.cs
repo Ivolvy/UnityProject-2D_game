@@ -5,17 +5,18 @@ using System.Collections.Generic;
 [ExecuteInEditMode]
 public class laserScript : MonoBehaviour {
 	public Transform startPoint;
-	public Transform endPoint;
+	//public Transform endPoint;
     public float timeInterval = 0.2f;
     public float laserWidth = 0.2f;
     public bool isRandom = false;
 
     LineRenderer laserLine;
 
-    GameObject laser;
+    GameObject GoLasersEndPoints;
 
     int lastIndex = 0;
     int currentIndex = 0;
+    int randomNumber;
 
     Transform[] lasersArray;
 
@@ -24,19 +25,25 @@ public class laserScript : MonoBehaviour {
     void Start () {
 		laserLine = GetComponentInChildren<LineRenderer> ();
 		laserLine.SetWidth (laserWidth, laserWidth);
-        lasersArray = new Transform[transform.childCount];
+        GoLasersEndPoints = GameObject.Find("LasersEndPoints");
+        lasersArray = new Transform[GoLasersEndPoints.transform.childCount];
 
         SetLasersEnd();
     }
 
     void SetLasersEnd() {
-        foreach (Transform child in transform) {
+
+        foreach (Transform child in GoLasersEndPoints.transform) {
             child.name = "LasersEnd-" + lastIndex;
             lasersArray[lastIndex] = child;
             lastIndex++;
         }
-
-        StartCoroutine(TraceLasers());
+        if (isRandom) {
+            StartCoroutine(TraceRandomLasers());
+        }
+        else {
+            StartCoroutine(TraceLasers());
+        }
     }
 
     IEnumerator TraceLasers() {
@@ -50,23 +57,17 @@ public class laserScript : MonoBehaviour {
                 StartCoroutine(TraceLasers());
             }
         }
-
-
-    /*    foreach (Transform child in transform) {
-
-            lasersArray[currentIndex] = child;
-
-            laserLine.SetPosition(0, startPoint.position);
-            laserLine.SetPosition(1, child.position);
-            yield return new WaitForSeconds(timeInterval);
-            currentIndex++;
-            if (currentIndex == lastIndex) {
-                currentIndex = 0;
-                StartCoroutine(TraceLasers());
-            }
-        }*/
     }
 
+    IEnumerator TraceRandomLasers() {
+        randomNumber = Random.Range(0, lasersArray.Length);
+
+        laserLine.SetPosition(0, startPoint.position);
+        laserLine.SetPosition(1, lasersArray[randomNumber].position);
+        yield return new WaitForSeconds(timeInterval);
+
+        StartCoroutine(TraceRandomLasers());
+    }
 
 
     // Update is called once per frame
