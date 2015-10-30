@@ -34,6 +34,7 @@ public class JewelCounter : MonoBehaviour {
         audioSource.PlayOneShot(collect);
         GameObject.Find("nbOfJewels").GetComponent<Text>().text = nbOfJewels.ToString() + "x";
  
+        //we enter party mode!
         if(nbOfJewels == 1) {
             GoPlayer.GetComponent<Renderer>().material = lighting_Sprite;
             party.SetActive(true);
