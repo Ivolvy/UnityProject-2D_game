@@ -8,7 +8,7 @@ public class Monster : ACharacter {
 
     Animator animator;
 
-    string _currentDirection = "right";
+    string _currentDirectionMs = "right";
     public float dir = 1;
 
     bool _isDead = false;
@@ -40,7 +40,7 @@ public class Monster : ACharacter {
             _isGrounded = true;
         }
         else if(coll.gameObject.name == "Player" || coll.gameObject.tag == "Wall") {
-            if (_currentDirection == "left") {
+            if (_currentDirectionMs == "left") {
                 changeMonsterDirection("right");
             }
             else {
@@ -49,23 +49,22 @@ public class Monster : ACharacter {
         }
     }
 
+    //kill the monster when the player jump on it
     void OnTriggerEnter2D(Collider2D other) {
         changeState("DIE", animator);
         audioSource.PlayOneShot(kill);
 
         _isDead = true;
-        GameObject Go = GameObject.Find("Monster");
-
-        Destroy(Go, 0.5f);
+        Destroy(gameObject, 0.5f);
     }
 
     public void changeMonsterDirection(string direction) {
-        _currentDirection = base.changeDirection(direction);
+        _currentDirectionMs = base.changeDirection(direction);
 
-        if (_currentDirection == "right") {
+        if (_currentDirectionMs == "right") {
             dir = 1;
         }
-        else if (_currentDirection == "left") {
+        else if (_currentDirectionMs == "left") {
             dir = -1;
         }
     }

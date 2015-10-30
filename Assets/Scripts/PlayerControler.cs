@@ -25,7 +25,8 @@ public class PlayerControler : ACharacter {
     bool _soundJumpPlaying = false;
 
     Rigidbody2D _playerComponent;
-
+    GameObject GoMonster;
+    Monster monster;
 
     public AudioClip jump;
     public AudioClip hurt;
@@ -36,14 +37,19 @@ public class PlayerControler : ACharacter {
     void Start () {
         animator = this.GetComponent<Animator>();
         _playerComponent = GetComponent<Rigidbody2D>();
+
+        //get the monster object
+        GoMonster = GameObject.Find("Monster");
+        monster = (Monster)GoMonster.GetComponent(typeof(Monster));
+
         audioSource = GetComponent<AudioSource>();
     }
 
 
     void Update() {
 
+        //Manage the sound when the player walks
         if((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && _isGrounded) {
-            
             if(_soundJumpPlaying == false) {
                 _soundJumpPlaying = true;
                 audioSource.loop = true;
@@ -66,6 +72,7 @@ public class PlayerControler : ACharacter {
         //if we hold the space key more time, the player go highter
         if (Input.GetKeyDown(KeyCode.Space)) {
             if (_isGrounded) {
+                Jump = true;
                 _isGrounded = false;
                 _heightJump = 5f;
 
@@ -74,7 +81,6 @@ public class PlayerControler : ACharacter {
             }
         }
         if (Input.GetKey(KeyCode.Space)) {
-            Jump = true;
             _timeHeld += Time.deltaTime;
           
             if (_timeHeld > 0.2f && _addedMaxJump != true) {
@@ -92,7 +98,7 @@ public class PlayerControler : ACharacter {
 
         if (_pauseMovement != true) {
 
-            if (Input.GetKey(KeyCode.LeftArrow)) {
+            if (Input.GetKey(KeyCode.LeftArrow) && !Duck) {
                 changeDirection("left");
                 _playerComponent.velocity = new Vector2(-3, _playerComponent.velocity.y);
 
@@ -100,7 +106,7 @@ public class PlayerControler : ACharacter {
                     Walk = true;
                 }
             }
-            else if (Input.GetKey(KeyCode.RightArrow)) {
+            else if (Input.GetKey(KeyCode.RightArrow) && !Duck) {
                 changeDirection("right");
 
                 _playerComponent.velocity = new Vector2(3, _playerComponent.velocity.y);
@@ -123,30 +129,32 @@ public class PlayerControler : ACharacter {
 
 
     void OnCollisionEnter2D(Collision2D coll){
-        
-        if(coll.gameObject.name == "Background" || coll.gameObject.name == "Platform") {
+
+        if((coll.gameObject.name == "Background" || coll.gameObject.name == "Platform") && !Hurt) {
             _isGrounded = true;
             Idile = true;
         }
         else if(coll.gameObject.name == "Monster") {
+            if (_isGrounded) {
+                float monsterDirection = monster.getDirection();
 
-            //get the monster object
-            GameObject Go = GameObject.Find("Monster");
-            Monster monster = (Monster)Go.GetComponent(typeof(Monster));
-            float monsterDirection = monster.getDirection();
+                Hurt = true;
+                
+                audioSource.PlayOneShot(hurt);
 
-            Hurt = true;
-            audioSource.PlayOneShot(hurt);
-
-            //push the player on the opposate direction of the monster
-            GetComponent<Rigidbody2D>().velocity = new Vector2(2 * monsterDirection, 2.5f);
-            _pauseMovement = true;
-            Invoke("enableMovement", 2);
+                //push the player on the opposate direction of the monster
+                GetComponent<Rigidbody2D>().velocity = new Vector2(2 * monsterDirection, 2.5f);
+                _pauseMovement = true;
+                Invoke("enableMovement", 2);
+            }
+            else { //if the player jump on the mosnter's head
+                GetComponent<Rigidbody2D>().velocity = new Vector2(_playerComponent.velocity.x, 2.5f);
+            }
         }
     }
 
 
-    //enable the movement of the Player
+    //enable the movement of the Player after is was hurted
     void enableMovement() {
         _pauseMovement = false;
         Idile = true;
@@ -160,7 +168,9 @@ public class PlayerControler : ACharacter {
             return _idile;
         }
         set {
-            _idile = true;
+            _idile = value;
+            _hurt = false;
+            _duck = false;
             changeState("IDILE", animator);
         }
     }
@@ -170,7 +180,8 @@ public class PlayerControler : ACharacter {
             return _walk;
         }
         set {
-            _walk = true;
+            _walk = value;
+            _duck = false;
             changeState("WALK", animator);
         }
     }
@@ -180,7 +191,7 @@ public class PlayerControler : ACharacter {
             return _jump;
         }
         set {
-            _jump = true;
+            _jump = value;
             changeState("JUMP", animator);
         }
     }
@@ -190,7 +201,7 @@ public class PlayerControler : ACharacter {
             return _duck;
         }
         set {
-            _duck = true;
+            _duck = value;
             changeState("DUCK", animator);
         }
     }
@@ -200,7 +211,7 @@ public class PlayerControler : ACharacter {
             return _hurt;
         }
         set {
-            _hurt = true;
+            _hurt = value;
             changeState("HURT", animator);
         }
     }

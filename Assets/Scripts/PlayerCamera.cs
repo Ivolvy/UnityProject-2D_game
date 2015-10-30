@@ -17,13 +17,10 @@ public class PlayerCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        //Debug.Log(target.transform.position.x);
 
-        if (target && target.transform.position.x >= -5.4 && target.transform.position.x <= 20.6) {
+        if (target && target.transform.position.x >= -5.4 && target.transform.position.x <= 20.4) {
             Vector3 posNoZ = transform.position;
             posNoZ.z = target.transform.position.z;
-
-
 
             Vector3 targetDirection = (target.transform.position - posNoZ);
 

@@ -44,7 +44,7 @@ public class JewelCounter : MonoBehaviour {
         GameObject.Find("nbOfJewels").GetComponent<Text>().text = nbOfJewels.ToString() + "x";
  
         //we enter party mode!
-        if(nbOfJewels == 1) {
+        if(nbOfJewels == 4) {
 
             modifyGameSong();
             modifyLightingOnSprites();
